@@ -16,8 +16,9 @@ https://github.com/anthonyraymond/joal
       -e DOCKGID=<GID default:10030> \
       -e DOCKUPGRADE=<0|1> \
       -e DOCKPORT=<port default:1234> \
+      -e DOCKSECRET_OBFUSCATION_PATH=<string default:joaleeS8efie> \
+      -e DOCKSECRET_TOKEN=<string default:eikoogei8yohphaph6eiza3EraaChav2jee8lood9iegaing> \
       -p 1234:1234 digrouz/joal
-
 
 ## Environment Variables
 
