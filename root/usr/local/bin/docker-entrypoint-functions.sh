@@ -3,7 +3,6 @@
 MYUSER="dockuser"
 MYGID="100000"
 MYUID="100000"
-MYUPGRADE="0"
 
 DetectOS(){
   if [ -e /etc/alpine-release ]; then
@@ -20,13 +19,14 @@ DetectOS(){
 }
 
 AutoUpgrade(){
-  local OS
-  DetectOS
+  local OS=$(DetectOS)
+  local MYUPGRADE=0
   if [ "$(id -u)" = '0' ]; then
     if [ -n "${DOCKUPGRADE}" ]; then
       MYUPGRADE="${DOCKUPGRADE}"
     fi
     if [ "${MYUPGRADE}" == 1 ]; then
+      DockLog "AutoUpgrade is enabled."
       if [ "${OS}" == "alpine" ]; then
         apk --no-cache upgrade
         rm -rf /var/cache/apk/*
@@ -43,6 +43,8 @@ AutoUpgrade(){
         yum clean all
         rm -rf /var/cache/yum/*
       fi
+    else
+      DockLog "AutoUpgrade is not enabled."
     fi
   fi
 }
@@ -153,10 +155,11 @@ ConfigureUser () {
 
 DockLog(){
   local OS=$(DetectOS)
+  local date=$(date)
   if [ "${OS}" == "centos" ] || [ "${OS}" == "alpine" ]; then
-    echo "${1}"
+    echo "[${date}] ${1}"
   else
-    logger "${1}"
+    logger "[${date}] ${1}"
   fi
 }
 
