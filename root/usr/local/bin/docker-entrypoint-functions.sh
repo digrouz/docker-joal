@@ -155,11 +155,11 @@ ConfigureUser () {
 
 DockLog(){
   local OS=$(DetectOS)
-  local date=$(date)
+  local MYDATE=$(date)
   if [ "${OS}" == "centos" ] || [ "${OS}" == "alpine" ]; then
-    echo "[${date}] ${1}"
+    echo "[${MYDATE}] ${1}"
   else
-    logger "[${date}] ${1}"
+    logger "[${MYDATE}] ${1}"
   fi
 }
 
