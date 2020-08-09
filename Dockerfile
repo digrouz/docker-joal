@@ -39,3 +39,16 @@ RUN set -x && \
     rm -rf /tmp/* \
            /var/cache/apk/*  \
            /var/tmp/*
+
+### Volume
+VOLUME ["/config"]
+
+### Expose ports
+EXPOSE 1234
+
+### Running User: not used, managed by docker-entrypoint.sh
+#USER joal
+
+### Start joal
+ENTRYPOINT ["/docker-entrypoint.sh"]
+CMD ["joal"]
