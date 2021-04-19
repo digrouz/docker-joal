@@ -1,4 +1,5 @@
 [![auto-update-workflow](https://github.com/digrouz/docker-joal/actions/workflows/auto-update.yml/badge.svg)](https://github.com/digrouz/docker-joal/actions/workflows/auto-update.yml)
+https://img.shields.io/docker/build/digrouz/joal
 
 # docker-joal
 
