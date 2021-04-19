@@ -27,16 +27,10 @@ if [ "${1}" == 'joal' ]; then
 
   cd /joal
 
-  if [ ! -d /config/torrents ]; then
-    DockLog "Creating an populating directory /config/torrents with upstream defaults"
-    cp -r /joal/torrents /config/
-  fi
-
-  if [ ! -d /config/clients ]; then
-    DockLog "Creating an populating directory /config/clients with upstream defaults"
-    mkdir /config/clients
-    cp -r /joal/clients /config/
-  fi
+  DockLog "Creating and populating directory /config/torrents with upstream defaults"
+  cp -r /joal/torrents /config/
+  DockLog "Creating an populating directory /config/clients with upstream defaults"
+  cp -r /joal/clients /config/
 
   if [ ! -e /config/config.json ]; then
     DockLog "Creating default config file /config/config.json"
@@ -44,13 +38,14 @@ if [ "${1}" == 'joal' ]; then
   fi
 
   DockLog "Fixing permissions on /config"
-  chown -R ${MYUSER} /config 
+  chown -R ${MYUSER} /config
 
   RunDropletEntrypoint
 
   DockLog "Starting application: ${1}"
   exec su-exec "${MYUSER}" java -jar /joal/joal.jar \
-	  --joal-conf=/config    --spring.main.web-environment=true \
+	  --joal-conf=/config  \
+          --spring.main.web-environment=true \
 	  --server.port="${MYPORT}" \
 	  --joal.ui.path.prefix="${MYSECRET_OBFUSCATION_PATH}" \
 	  --joal.ui.secret-token="${MYSECRET_TOKEN}"
