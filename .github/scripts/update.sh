@@ -2,8 +2,7 @@
 
 JOAL_URL="https://api.github.com/repos/anthonyraymond/joal/tags"
 
-FULL_LAST_VERSION=$(curl -SsL ${JOAL_URL} | jq .[0].name -r )
-LAST_VERSION="${FULL_LAST_VERSION:1}"
+LAST_VERSION=$(curl -SsL ${JOAL_URL} | jq .[24].name -r )
 
 sed -i -e "s|JOAL_VERSION='.*'|JOAL_VERSION='${LAST_VERSION}'|" Dockerfile*
 
