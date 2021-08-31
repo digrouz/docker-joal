@@ -25,7 +25,7 @@ RUN set -x && \
     apk add --no-cache --virtual=run-deps \
       bash \
       ca-certificates \
-      openjdk8 \
+      openjdk11 \
       su-exec \
     && \
     mkdir /joal /config && \
