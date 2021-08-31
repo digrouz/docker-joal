@@ -1,10 +1,15 @@
 [![auto-update-workflow](https://github.com/digrouz/docker-joal/actions/workflows/auto-update.yml/badge.svg)](https://github.com/digrouz/docker-joal/actions/workflows/auto-update.yml)
-![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/digrouz/joal)
+[![dockerhub-workflow](https://github.com/digrouz/docker-joal/actions/workflows/dockerhub.yml/badge.svg)](https://github.com/digrouz/docker-joal/actions/workflows/dockerhub.yml)
 ![Docker Pulls](https://img.shields.io/docker/pulls/digrouz/joal)
 
 # docker-joal
 
 Install Joal into a Linux Container
+
+## Tags
+Several tags are available:
+* latest: see alpine
+* alpine: [Dockerfile_alpine](https://github.com/digrouz/docker-joal/blob/master/Dockerfile_alpine)
 
 ## Description
 
