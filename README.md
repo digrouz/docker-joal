@@ -61,4 +61,3 @@ This variable is not mandatory but highly advised. secret token here (this is so
 
 * The docker entrypoint can upgrade operating system at each startup. To enable this feature, just add `-e DOCKUPGRADE=1` at container creation.
 
-
