@@ -1,0 +1,25 @@
+# This is a basic workflow to help you get started with Actions
+
+name: update-alpine-workflow
+
+# Controls when the action will run. 
+on:
+  schedule:
+  - cron: "0 2 * * *"
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  update-alpine-job:
+    runs-on: ubuntu-latest
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+      - name: configure git
+        run: |
+          git config --global user.email "nicolas.digregorio@gmail.com"
+          git config --global user.name "Nicolas DI GREGORIO"
+      - name: run update.sh
+        run: |
+          echo "Run update-alpine.sh"
+          bash .github/scripts/update-alpine.sh
