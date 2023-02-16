@@ -6,7 +6,7 @@ FULL_LAST_VERSION=$(curl -SsL ${JOAL_URL} | \
               jq -r -c '.[] | select( .prerelease == false ) | .tag_name' |\
               head -1 \
               )
-LAST_VERSION="${FULL_LAST_VERSION:1}"
+LAST_VERSION="${FULL_LAST_VERSION}"
 
 sed -i -e "s|JOAL_VERSION='.*'|JOAL_VERSION='${LAST_VERSION}'|" Dockerfile*
 
