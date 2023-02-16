@@ -1,0 +1,4 @@
+#!/command/with-contenv sh
+
+chown -R appuser:appuser /config
+chmod -R g+w /config

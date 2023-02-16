@@ -1,0 +1,13 @@
+#!/command/with-contenv sh
+
+cd /joal
+
+echo "Creating and populating directory /config/torrents with upstream defaults"
+cp -r /joal/torrents /config/
+echo "Creating an populating directory /config/clients with upstream defaults"
+cp -r /joal/clients /config/
+
+if [ ! -e /config/config.json ]; then
+  echo "Creating default config file /config/config.json"
+  cp /joal/config.json /config/config.json
+fi

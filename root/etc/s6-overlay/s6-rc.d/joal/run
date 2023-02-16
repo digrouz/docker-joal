@@ -1,0 +1,10 @@
+#!/command/with-contenv sh
+
+cd /joal
+
+exec s6-setuidgid appuser java -jar /joal/joal.jar \
+	  --joal-conf=/config  \
+      --spring.main.web-environment=true \
+	  --server.port="${JOAL_PORT:-1234}" \
+	  --joal.ui.path.prefix="${JOAL_SECRET_OBFUSCATION_PATH:-joaleeS8efie}" \
+	  --joal.ui.secret-token="${JOAL_SECRET_TOKEN:-eikoogei8yohphaph6eiza3EraaChav2jee8lood9iegaing}"
