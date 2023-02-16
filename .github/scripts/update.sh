@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-JOAL_URL="https://api.github.com/repos/anthonyraymond/joal/tags"
+JOAL_URL="https://api.github.com/repos/anthonyraymond/joal/releases"
 
 FULL_LAST_VERSION=$(curl -SsL ${JOAL_URL} | \
               jq -r -c '.[] | select( .prerelease == false ) | .tag_name' |\

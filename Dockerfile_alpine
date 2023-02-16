@@ -1,7 +1,7 @@
 FROM alpine:3.17.2
 LABEL maintainer "DI GREGORIO Nicolas <nicolas.digregorio@gmail.com>"
 
-ARG JOAL_VERSION=''
+ARG JOAL_VERSION='.1.33'
 
 ### Environment variables
 ENV LANG='en_US.UTF-8' \
