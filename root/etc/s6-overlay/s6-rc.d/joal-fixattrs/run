@@ -2,3 +2,6 @@
 
 chown -R appuser:appuser /config
 chmod -R g+w /config
+
+chown -R appuser:appuser /joal
+chmod -R g+w /joal

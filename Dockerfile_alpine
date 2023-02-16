@@ -21,7 +21,7 @@ RUN set -x && \
     wget https://github.com/anthonyraymond/joal/releases/download/${JOAL_VERSION}/joal.tar.gz -O /tmp/joal.tar.gz && \
     tar xzf /tmp/joal.tar.gz -C /joal && \
     mv /joal/jack-of-all-trades-${JOAL_VERSION}.jar /joal/joal.jar && \
-    chown -R ${MYUSER} /joal /config && \
+    chown -R appuser /joal /config && \
     rm -rf /tmp/* \
            /var/cache/apk/*  \
            /var/tmp/*
