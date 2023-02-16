@@ -1,7 +1,9 @@
 #!/command/with-contenv sh
 
+echo "Fixing permissions on /config"
 chown -R appuser:appuser /config
 chmod -R g+w /config
 
+echo "Fixing permissions on /joal"
 chown -R appuser:appuser /joal
 chmod -R g+w /joal
