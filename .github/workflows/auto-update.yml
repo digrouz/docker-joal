@@ -13,8 +13,9 @@ jobs:
   auto-update-job:
     runs-on: ubuntu-latest
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@main
+      - uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.MYGITHUB_TOKEN }}
       - name: configure git
         run: |
           git config --global user.email "nicolas.digregorio@gmail.com"
