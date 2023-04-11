@@ -13,7 +13,7 @@ jobs:
   auto-update-job:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@main
         with:
           token: ${{ secrets.MYGITHUB_TOKEN }}
       - name: configure git
